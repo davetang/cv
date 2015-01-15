@@ -1,0 +1,138 @@
+% with help from this awesome post
+% http://texblog.org/2012/04/25/writing-a-cv-in-latex/
+
+\documentclass[a4paper, 11pt]{article}
+\usepackage[margin=3cm]{geometry}
+\usepackage{helvet}
+
+\usepackage{hyperref}
+\hypersetup{
+   colorlinks,
+   citecolor=black,
+   filecolor=black,
+   linkcolor=black,
+   urlcolor=blue
+}
+
+\usepackage{url}
+\usepackage{bibentry}
+
+% Reformat the date
+% http://www.howtotex.com/packages/customize-the-date-format-in-your-latex-documents/
+\usepackage{datetime}
+\newdateformat{mydate}{\THEYEAR\ \monthname[\THEMONTH] \THEDAY}
+
+\title{\bfseries\Huge Dave Ting Pong Tang}
+\author{
+   \href{mailto:davetingpongtang@gmail.com}{davetingpongtang@gmail.com}
+}
+\date{\mydate\today}
+
+\usepackage{array, xcolor}
+\definecolor{lightgray}{gray}{0.8}
+\newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
+\newcolumntype{R}{p{0.8\textwidth}}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+
+\begin{document}
+
+\maketitle
+
+% http://en.wikibooks.org/wiki/LaTeX/Boxes#minipage_and_parbox
+\begin{minipage}[ht]{.40\textwidth}\centering
+6-5 Ono-cho Tsurumi \\
+Yokohama 230-0046 \\
+Japan
+\end{minipage}
+\begin{minipage}[ht]{.50\textwidth}\centering
+Twitter: \href{https://twitter.com/davetang31}{@davetang31} \\
+GitHub: \href{https://github.com/davetang}{davetang} \\
+Blog: \href{http://davetang.org/muse}{http://davetang.org/muse}
+\end{minipage}
+
+\section*{Education}
+\begin{tabular}{L!{\VRule}R}
+   2010--2015 & PhD Candidate, Vrije University, the Netherlands \\
+   2001--2005 & BSc (Honours) in biochemistry and microbiology, University of Queensland, Australia \\
+\end{tabular}
+
+\section*{Past Scientific Positions}
+\begin{tabular}{L!{\VRule}R}
+   2010--2015 & Research Associate in the lab of Piero Carninci at RIKEN Yokohama, Japan \\
+   2008--2010 & Research Assistant in the lab of Sean Grimmond at The University of Queensland, Australia \\
+   2006--2008 & Research Assistant in the lab of Brian Dalrymple at the Commonwealth Scientific and Industrial Research Organisation, Australia \\
+   2005--2006 & Research Assistant in the lab of Mark Ragan at the University of Queensland, Australia \\
+\end{tabular}
+
+\section*{Research Interests}
+
+\begin{itemize}
+   \item Genomics and transcriptomics; in particular the study of non-coding RNAs and transposable elements expression
+   \item Open science and reproducible research
+   \item The application of bioinformatics, in particular machine learning and data mining methods, to biological problems
+\end{itemize}
+
+\section*{Bioinformatic Skills}
+
+\begin{itemize}
+   \item Data analysis of high-throughput sequencing data from various *Seq protocols
+   \item Knowledge and the ability to use various bioinformatic databases, repositories, and tools
+   \item Biostatistics for the analysis of high-throughput sequencing data
+\end{itemize}
+
+\section*{Computer Skills}
+
+\begin{itemize}
+   \item Programming/scripting languages: Perl, R, SQL, bash, PHP, JavaScript, Python, and C
+   \item Operating systems: Linux/Unix, OS X, and Windows
+   \item Pre Web 2.0: CGI, PHP, HTML, MySQL, Apache2, and JavaScript
+   \item Open science and reproducible research tools: git, GitHub, WordPress, Jekyll, and R Markdown/Markdown
+\end{itemize}
+
+\section*{Honours and Awards}
+\begin{tabular}{L!{\VRule}R}
+   2010 & CSIRO Chairman's Medal \\
+   2008 & CSIRO Partnership Excellence Award \\
+\end{tabular}
+
+\section*{Academic and Administrative Experience}
+\begin{tabular}{L!{\VRule}R}
+   2015 & MODHEP Workshop presenter on \href{https://github.com/davetang/cage_r}{analysing CAGE data using R} \\
+   2013--2014 & Organiser of the Chat with Guest sessions at RIKEN CLST DGT \\
+   2013--2014 & Organiser of the Student Journal club at RIKEN CLST DGT \\
+   2013 & Organising committee for the \href{http://www.nature.com/natureevents/science/events/20919-BrainTrain_Conference}{BrainTrain conference} \\
+   2013 & Organiser of the BrainTrain workshop: Identifying regulatory elements in the genome \\
+\end{tabular}
+
+\section*{Workshop and Course Attendances}
+\begin{tabular}{L!{\VRule}R}
+   2014 & KI/RIKEN Doctoral Course: Employing Genome-wide Technologies for Functional Regulation in Development and Disease \\
+   2013 & AMATA Conference ECR workshop \\
+   2013 & Coursera’s Data Analysis from Johns Hopkins University \\
+   2013 & BrainTrain \href{http://www.brain-train.nl/training-2/}{courses and workshops} \\
+   2013 & RIKEN/KI Doctoral Course: Epigenomics: Methods and Applications to Disease and Development \\
+   2012 & SISSA Summer School on Dopaminergic Neurons \\
+   2012 & RIKEN/KI Doctoral Course: Functional regulation in development and disease \\
+   2011 & UQ Winter School in Mathematical and Computational Biology \\
+   2011 & RIKEN/EBI Bioinformatics Roadshow \\
+\end{tabular}
+
+\section*{Hobbies and Interests}
+
+Sports (especially basketball), cycling, blogging, self study, and computer games.
+
+\section*{Publications}
+% http://tex.stackexchange.com/questions/22645/hiding-the-title-of-the-bibliography
+\begingroup
+   \renewcommand{\section}[2]{}%
+   \bibliographystyle{unsrturl}
+   \nocite{*}
+   \bibliography{pub}
+\endgroup
+
+\vfill
+
+\footnotesize
+This C.V. was prepared in \LaTeX\ and is available at \href{https://github.com/davetang/cv}{https://github.com/davetang/cv}.
+
+\end{document}

@@ -1,3 +1,10 @@
 # Dave Tang's curriculum vitae
 
-See <https://github.com/davetang/cv/blob/master/cv.pdf>
+Run:
+
+~~~~{.bash}
+to_pdf.sh cv.tex
+~~~~
+
+to produce <https://github.com/davetang/cv/blob/master/cv.pdf>.
+

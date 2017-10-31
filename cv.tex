@@ -19,14 +19,16 @@
 
 % Reformat the date
 % http://www.howtotex.com/packages/customize-the-date-format-in-your-latex-documents/
-\usepackage{datetime}
-\newdateformat{mydate}{\THEYEAR\ \monthname[\THEMONTH] \THEDAY\textsuperscript{th}}
+% \usepackage{datetime}
+% \newdateformat{mydate}{\THEYEAR\ \monthname[\THEMONTH] \THEDAY\textsuperscript{th}}
 
-\title{\bfseries\Huge Dave Ting Pong Tang}
-\author{
-   \href{mailto:davetingpongtang@gmail.com}{davetingpongtang@gmail.com}
-}
-\date{\mydate\today}
+% \author{
+%    \href{mailto:davetingpongtang@gmail.com}{davetingpongtang@gmail.com}
+% }
+% \date{\mydate\today}
+
+% remove date and whitespace from title
+\date{\vspace{-10ex}}
 
 \usepackage{array, xcolor}
 \definecolor{lightgray}{gray}{0.8}
@@ -35,31 +37,57 @@
 \newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
 
 \begin{document}
+\title{Dave Ting Pong Tang}
 
+%\title{\bfseries\Large Dave Ting Pong Tang}
 \maketitle
 
+% this section from https://github.com/watsonbox/cv_template_2004
+
+\parbox[t]{0.5\textwidth}{
+\begin{tabbing}
+\hspace{3cm} \= \hspace{4cm} \= \kill
+{\bf Address} \> 35 Stirling Highway\\
+\> Perth WA 6009 \\
+{\bf Date of Birth} \> 1983 March 31\textsuperscript{st} \\
+{\bf Nationality} \> Australian and British \\
+                  \> National (Overseas)
+\end{tabbing}
+}
+\hfil
+\parbox[t]{0.5\textwidth}{
+\begin{tabbing}
+\hspace{2cm} \= \hspace{4cm} \= \kill
+{\bf Blog} \> \href{https://davetang.org/muse}{https://davetang.org/muse} \\
+{\bf GitHub} \> \href{https://github.com/davetang}{https://github.com/davetang} \\
+{\bf Twitter} \> \href{https://twitter.com/davetang31}{https://twitter.com/davetang31} \\
+{\bf Email} \> \href{mailto:davetingpongtang@gmail.com}{davetingpongtang@gmail.com} \\
+{\bf Phone} \> +61 08 6488 4409
+\end{tabbing}
+}
+
 % http://en.wikibooks.org/wiki/LaTeX/Boxes#minipage_and_parbox
-\begin{minipage}[ht]{.40\textwidth}\centering
-100 Roberts Road, Subiaco \\
-Western Australia 6008 \\
-Australia
-\end{minipage}
-\begin{minipage}[ht]{.50\textwidth}\centering
-Twitter: \href{https://twitter.com/davetang31}{@davetang31} \\
-GitHub: \href{https://github.com/davetang}{davetang} \\
-Blog: \href{http://davetang.org/muse}{http://davetang.org/muse}
-\end{minipage}
+% \begin{minipage}[ht]{.40\textwidth}\centering
+% 100 Roberts Road, Subiaco \\
+% Western Australia 6008 \\
+% Australia
+% \end{minipage}
+% \begin{minipage}[ht]{.50\textwidth}\centering
+% Twitter: \href{https://twitter.com/davetang31}{@davetang31} \\
+% GitHub: \href{https://github.com/davetang}{davetang} \\
+% Blog: \href{http://davetang.org/muse}{http://davetang.org/muse}
+% \end{minipage}
 
 \section*{Summary}
 
-I am currently a post-doctoral researcher at the Telethon Kids Institute, working on the analysis of human genetic variants with respect to rare diseases. The main goal of my current research is to develop integrative approaches towards identifying disease-causing variants. Prior to this position, I was a Marie Curie Early Stage Researcher in the lab of Piero Carninci in RIKEN Yokohama and was primarily working on the analysis of high-throughput transcriptome sequencing data sets. During my time in RIKEN, I developed methods to identify sequencing artefacts and studied various classes of non-coding RNAs. I am passionate about bioinformatics and maintain a \href{http://davetang.org/muse}{technical blog} dedicated to bioinformatics. I am an open science and reproducible research advocate. It is my dream that one day my work will have a direct positive impact on the lives of others.
+I am currently a post-doctoral researcher at the University of Western Australian working on single cell transcriptomics. Prior to this position, I was working on the analysis of whole exome sequencing in patients with rare genetic disorders at the Telethon Kids Institute. During my PhD I was a Marie Curie Early Stage Researcher in the lab of Piero Carninci in RIKEN Yokohama and was working primarily on the analysis of high-throughput transcriptome sequencing data sets. I have also worked as a bioinformatician at the University of Queensland and the Commonwealth Scientific and Industrial Research Organisation.
 
-\section*{Personal}
-\begin{tabular}{L!{\VRule}R}
-   DOB & 1983 March 31\textsuperscript{st} \\
-   Birth place & Hong Kong \\
-   Nationality & Australian and British National (Overseas) \\
-\end{tabular}
+% \section*{Personal}
+% \begin{tabular}{L!{\VRule}R}
+%    DOB & 1983 March 31\textsuperscript{st} \\
+%    Birth place & Hong Kong \\
+%    Nationality & Australian and British National (Overseas) \\
+% \end{tabular}
 
 \section*{Education}
 \begin{tabular}{L!{\VRule}R}
@@ -69,49 +97,33 @@ I am currently a post-doctoral researcher at the Telethon Kids Institute, workin
 
 \section*{Past Scientific Positions}
 \begin{tabular}{L!{\VRule}R}
+   2015--2017 & Post-doctoral researcher in the lab of Timo Lassmann at the Telethon Kids Institute, Australia \\
    2010--2015 & Research Associate in the lab of Piero Carninci at RIKEN Yokohama, Japan \\
-   2008--2010 & Research Assistant in the lab of Sean Grimmond at The University of Queensland, Australia \\
+   2008--2010 & Research Assistant in the lab of Sean Grimmond at the University of Queensland, Australia \\
    2006--2008 & Research Assistant in the lab of Brian Dalrymple at the Commonwealth Scientific and Industrial Research Organisation, Australia \\
    2005--2006 & Research Assistant in the lab of Mark Ragan at the University of Queensland, Australia \\
 \end{tabular}
 
-\section*{Research Interests}
+\section*{Grants}
+\begin{tabular}{L!{\VRule}R}
+   2017 & Dissecting the leukaemia microenvironment - \href{https://www.cancerwa.asn.au/research/funding/collaborative_cancer_grant_scheme/}{Cancer Council WA Collaborative Cancer Grant Scheme} CIC AUD 43,395 \\
+   2016 & Targeting four-stranded DNA conformations to modulate gene expression in breast cancer - \href{https://www.cancerwa.asn.au/research/funding/collaborative_cancer_grant_scheme/}{Cancer Council WA Collaborative Cancer Grant Scheme} CIC AUD 47,669 \\
+   2015 & \href{http://telethonkids.org.au/our-research/projects-index/g/genetics-seqnextgen-translating-nextgen-sequencing-for-the-diagnosis-of-developmental-anomalies-and-rare-diseases/}{SeqNextGen}: Translating NextGen Sequencing for the Diagnosis of Developmental Anomalies and Rare Diseases Telethon - Perth Children's Hospital Research Fund AI4 AUD 192,505 \\
+\end{tabular}
 
-\begin{itemize}
-   \setlength\itemsep{0em}
-   \item Investigating the potential role of genetic variants in relation to biological function and disease.
-   \item Genomics and transcriptomics; in particular the study of non-coding RNAs and transposable elements.
-   \item The application of bioinformatics, in particular \href{https://github.com/davetang/machine_learning}{machine learning} and data mining methods, to biological problems.
-\end{itemize}
-
-\section*{Bioinformatic Skills}
-
-\begin{itemize}
-   \setlength\itemsep{0em}
-   \item Data analysis of high-throughput sequencing data from DNA-seq, RNA-seq, CAGE-seq, sRNA-seq, and ChIP-seq.
-   \item Knowledge and the ability to use various bioinformatic databases, APIs, repositories, and tools.
-   \item The application of biostatistics for the analysis of high-throughput sequencing data.
-\end{itemize}
-
-\section*{Computer Skills}
-
-\begin{itemize}
-   \setlength\itemsep{0em}
-   \item Operating systems: Linux/Unix (RHEL/CentOS and Ubuntu), OS X, and Windows.
-   \item Programming/scripting languages: Perl, R, \href{https://github.com/davetang/getting_started_with_c}{C}, Bash, JavaScript, SQL, and PHP.
-   \item Open science and reproducible research tools: \href{https://github.com/davetang/getting_started_with_git}{git}, cloud computing (AWS), WordPress, Jekyll, \href{https://github.com/davetang/learning_docker/}{Docker}, and R Markdown/Markdown.
-\end{itemize}
+% \section*{Research Interests}
+% 
+% \begin{itemize}
+%    \setlength\itemsep{0em}
+%    \item Investigating the potential role of genetic variants in relation to biological function and disease.
+%    \item Genomics and transcriptomics; in particular the study of non-coding RNAs and transposable elements.
+%    \item The application of bioinformatics, in particular \href{https://github.com/davetang/machine_learning}{machine learning} and data mining methods, to biological problems.
+% \end{itemize}
 
 \section*{Honours and Awards}
 \begin{tabular}{L!{\VRule}R}
    2010 & CSIRO Chairman's Medal \\
    2008 & CSIRO Partnership Excellence Award \\
-\end{tabular}
-
-\section*{Grants}
-\begin{tabular}{L!{\VRule}R}
-   2016 & \href{https://www.cancerwa.asn.au/research/funding/collaborative_cancer_grant_scheme/}{Cancer Council WA Collaborative Cancer Grant Scheme} CIC AUD 45,669 \\
-   2015 & Telethon - Perth Children's Hospital Research Fund ``\href{http://telethonkids.org.au/our-research/projects-index/g/genetics-seqnextgen-translating-nextgen-sequencing-for-the-diagnosis-of-developmental-anomalies-and-rare-diseases/}{SeqNextGen}: Translating NextGen Sequencing for the Diagnosis of Developmental Anomalies and Rare Diseases'' AI4 AUD 192,505 \\
 \end{tabular}
 
 \section*{Academic and Administrative Experience}
@@ -125,9 +137,6 @@ I am currently a post-doctoral researcher at the Telethon Kids Institute, workin
    2012 & Session chair for the \href{http://www.osc.riken.jp/english/event/2012/121115}{Patients and Medicines forum} \\
    2012 & Presenter at the RIKEN OSC bioinformatics course
 \end{tabular}
-
-\section*{Editorial Activities}
-Referee/Reviewer (number of grant proposals/manuscripts reviewed in parenthesis) for: National Health and Medical Research Council (1), BMC Genomics (1), PeerJ (1), and Scientific Reports (2).
 
 \section*{Workshop and Course Attendances}
 \begin{tabular}{L!{\VRule}R}
@@ -144,6 +153,27 @@ Referee/Reviewer (number of grant proposals/manuscripts reviewed in parenthesis)
    2011 & UQ winter school in mathematical and computational biology \\
    2011 & RIKEN/EBI bioinformatics roadshow \\
 \end{tabular}
+
+\section*{Editorial Activities}
+Referee/Reviewer (number of grant proposals/manuscripts reviewed in parenthesis) for: National Health and Medical Research Council (1), BMC Genomics (1), PeerJ (1), and Scientific Reports (2).
+
+\section*{Bioinformatic Skills}
+
+\begin{itemize}
+   \setlength\itemsep{0em}
+   \item Data analysis of high-throughput sequencing data including DNA-seq, RNA-seq, CAGE-seq, sRNA-seq, ChIP-seq, and scRNA-seq.
+   \item Knowledge and the ability to use various bioinformatic databases, APIs, repositories, and tools.
+   \item Ability to implement bioinformatic pipelines using pipelining tools such as Bpipe and Snakemake.
+\end{itemize}
+
+\section*{Computer Skills}
+
+\begin{itemize}
+   \setlength\itemsep{0em}
+   \item Operating systems: Linux/Unix (RHEL/CentOS and Ubuntu), OS X, and Windows.
+   \item Programming/scripting languages: Perl, R, \href{https://github.com/davetang/getting_started_with_c}{C}, Bash, JavaScript, SQL, and PHP.
+   \item Open science and reproducible research tools: \href{https://github.com/davetang/getting_started_with_git}{git}, cloud computing (AWS), WordPress, Jekyll, \href{https://github.com/davetang/learning_docker/}{Docker}, and R Markdown/Markdown.
+\end{itemize}
 
 \section*{Hobbies and Interests}
 Sports (especially basketball), cycling, bioinformatics blogging, reading, and movies.

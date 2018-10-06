@@ -2,7 +2,7 @@
 
 #usage function
 usage(){
-   echo "Uasge: $0 <file.tex>"
+   echo "Usage: $0 <file.tex>"
    exit 1
 }
 

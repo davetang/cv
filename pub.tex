@@ -1,0 +1,32 @@
+% CV prepared with help from this awesome post
+% http://texblog.org/2012/04/25/writing-a-cv-in-latex/
+
+\documentclass[a4paper, 10pt]{article}
+\usepackage[margin=3cm]{geometry}
+\usepackage{helvet}
+
+\usepackage{hyperref}
+\hypersetup{
+   colorlinks,
+   citecolor=black,
+   filecolor=black,
+   linkcolor=black,
+   urlcolor=blue
+}
+
+\usepackage{url}
+\usepackage{bibentry}
+
+\begin{document}
+
+\section*{Publications}
+% http://tex.stackexchange.com/questions/22645/hiding-the-title-of-the-bibliography
+\begingroup
+   \renewcommand{\section}[2]{}
+   \bibliographystyle{unsrturl}
+   \nocite{*}
+   \bibliography{pub}
+\endgroup
+
+\end{document}
+

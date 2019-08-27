@@ -1,0 +1,66 @@
+---
+title: "Making a CV with R"
+author: "Dave Tang"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Install `vitae`
+
+Install the `vitae` package, if you haven't already.
+
+```{r install}
+if(!"vitae" %in% installed.packages()){
+  install.packages('vitae')
+}
+library(vitae)
+```
+
+## Creating a CV
+
+See an [introduction to vitae](https://ropenscilabs.github.io/vitae/articles/vitae.html). Using RStudio, simply use the RStudio R Markdown template selector to create a new CV document. This is done by going to "File" -> "New File" -> "R Markdown" and then selecting "From Template".
+
+## Scholar
+
+The `awesome` template using the [scholar package](https://cran.r-project.org/web/packages/scholar/vignettes/scholar.html); this is handy if you have a Google Scholar page.
+
+```{r install_scholar, message = FALSE, warning=FALSE}
+if(!"scholar" %in% installed.packages()){
+  install.packages('scholar')
+}
+
+library(scholar)
+```
+
+Get my Google Scholar profile.
+
+```{r get_profile}
+id <- '7uxzL2QAAAAJ'
+
+l <- get_profile(id)
+
+l
+```
+
+Get my publications.
+
+```{r get_pubb}
+p <- get_publications(id)
+
+library(dplyr)
+p %>%
+  filter(cites > 0) %>%
+  select(title, journal, year, cites) %>%
+  DT::datatable()
+```
+
+Get my citation history.
+
+```{r get_cit_hist}
+ct <- get_citation_history(id)
+ct
+```

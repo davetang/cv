@@ -1,0 +1,70 @@
+---
+name: Dave
+surname: Tang
+position: "Post-doctoral Research Associate"
+address: "School of Biological Sciences, The University of Western Australia"
+phone: +61 08 6488 4409
+www: davetang.org
+email: "me@davetang.org"
+twitter: davetang31
+github: davetang
+linkedin: davetang
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+```
+
+# Some stuff about me
+
+ * I grew up in Papua New Guinea
+ * I did my PhD in Japan through a Marie Curie training network (BrainTrain)
+ * I play a lot of basketball
+
+# Education
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Bachelor of Science (Honours)", "2001-2005", "The University of Queensland", "Brisbane, Australia",
+  "PhD in Computational Biology", "2010-2015", "Vrije University", "Amsterdam, the Netherlands"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Work history
+
+```{r}
+tribble(
+  ~ Position, ~ Year, ~ Institution, ~ Where,
+  "Post-doctoral Research Associate", "2017-now", "The University of Western Australia", "Perth, Australia",
+  "Visiting Scientist", "2015-now", "RIKEN Yokohama", "Yokohama, Japan"
+) %>% 
+  detailed_entries(Position, Year, Institution, Where)
+```
+
+# Publications
+
+```{r pub}
+id <- '7uxzL2QAAAAJ'
+
+scholar::get_publications(id) %>%
+  mutate(author = gsub(pattern = "’", replacement = "'", x = author)) %>%
+  filter(cites > 0) %>%
+  arrange(desc(year)) %>%
+  distinct(title, .keep_all = TRUE) %>%
+  transmute(bibtype = "Article",
+            author = as.character(author),
+            title = as.character(title),
+            journaltitle = as.character(journal),
+            year,
+            key = row_number()) %>% 
+  RefManageR::as.BibEntry() %>% 
+  RefManageR::WriteBib("tang.bib")
+
+bibliography_entries("tang.bib")
+```

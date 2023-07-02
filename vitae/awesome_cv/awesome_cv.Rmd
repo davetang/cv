@@ -1,15 +1,15 @@
 ---
 name: Dave
 surname: Tang
-position: "Post-doctoral Research Associate"
-address: "School of Biological Sciences, The University of Western Australia"
-phone: +61 08 6488 4409
+position: "Bioinformatician at BrightPath Biotherapeutics"
+address: "Life Innovation Center 412, 3-25-22 Tonomachi, Kawasaki"
 www: davetang.org
 email: "me@davetang.org"
-twitter: davetang31
 github: davetang
 linkedin: davetang
+aboutme: I am a bioinformatician experienced in analysing high-throughput sequencing data. I have developed start-to-finish bioinformatics pipelines for the processing and analysis of RNA-seq and DNA-seq datasets. Recently, I started to work in the immunogenomics field and developed a fully fledged neoantigen prediction pipeline. I am familiar with machine/statistical learning and their best practices and have applied these techniques in predicting immunogenicity. I am also familiar with Linux systems and their administration, high-performance computing technologies, and cloud computing.  I write about these topics and more in my bioinformatics blog.
 date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: 414141
 output: vitae::awesomecv
 ---
 
@@ -19,42 +19,163 @@ library(vitae)
 library(tibble)
 ```
 
-# Some stuff about me
-
- * I grew up in Papua New Guinea
- * I did my PhD in Japan through a Marie Curie training network (BrainTrain)
- * I play a lot of basketball
-
 # Education
 
 ```{r}
 tribble(
-  ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Bachelor of Science (Honours)", "2001-2005", "The University of Queensland", "Brisbane, Australia",
-  "PhD in Computational Biology", "2010-2015", "Vrije University", "Amsterdam, the Netherlands"
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~details,
+  "Bachelor of Science (Honours)", "2001-2005", "The University of Queensland", "Brisbane, Australia", "Majoring in Biochemistry and Microbiology",
+  "PhD in Computational Biology", "2010-2015", "Vrije University", "Amsterdam, the Netherlands", "PhD completed through a Marie Curie training network (BrainTrain) as a Marie Curie Early Career Researcher."
 ) %>% 
-  detailed_entries(Degree, Year, Institution, Where)
+  detailed_entries(Degree, Year, Institution, Where, details)
 ```
 
-# Work history
+# Academic and Work Experience
 
 ```{r}
 tribble(
-  ~ Position, ~ Year, ~ Institution, ~ Where,
-  "Post-doctoral Research Associate", "2017-now", "The University of Western Australia", "Perth, Australia",
-  "Visiting Scientist", "2015-now", "RIKEN Yokohama", "Yokohama, Japan"
+  ~ position, ~ institute, ~ location, ~ dates, ~ details,
+  "Bioinformatician", "BrightPath Biotherapeutics", "Tokyo, Japan", "April 2020 - Current", "Developing the clinical neoantigen prediction pipeline for the personalised cancer peptide vaccine program.",
+  "Bioinformatician", "BrightPath Biotherapeutics", "Tokyo, Japan", "April 2020 - Current", "Providing bioinformatics support, systems administration of local HPC servers, and reviewing scientific publications.",
+  "Visiting Scientist", "RIKEN", "Yokohama, Japan", "May 2015 - March 2020", "Elucidating the potential role of a human minisatellite as an alternative transcription start site.",
+  "Visiting Scientist", "RIKEN", "Yokohama, Japan", "May 2015 - March 2020", "Examining the potential role of tissue and cell type specific expression of repetitive DNA elements.",
+  "Post-doctoral Research Associate", "The University of Western Australia", "Perth, Australia", "Jul. 2017 - Nov. 2019", "Analysing accession specific expression patterns in Arabidopsis thaliana single cell RNA-seq data.",
+  "Post-doctoral Research Associate", "The University of Western Australia", "Perth, Australia", "Jul. 2017 - Nov. 2019", "Developing a single cell RNA-seq computational approach for demultiplexing mixed genotype datasets.",
+  "Post-doctoral researcher", "Telethon Kids Institute", "Perth, Australia", "May 2015 - June 2017", "Developing and implementing high-throughput sequencing analysis workflows for diagnosing rare genetic diseases.",
+  "Post-doctoral researcher", "Telethon Kids Institute", "Perth, Australia", "May 2015 - June 2017", "Generating a reference genotype database of an Australian Aboriginal population.",
+  "Research Associate and PhD candidate", "RIKEN", "Yokohama, Japan", "April 2010 - May 2015", "Characterising a new class of universal non-coding RNAs (ncRNAs) involved in DNA Damage Repair.",
+  "Research Associate and PhD candidate", "RIKEN", "Yokohama, Japan", "April 2010 - May 2015", "Analysis on the expression of repetitive DNA elements and how they contribute to the genesis of ncRNAs.",
+  "Research Associate and PhD candidate", "RIKEN", "Yokohama, Japan", "April 2010 - May 2015", "Discovery of reverse transcriptase artefacts and developing a computational method for the removal of these artefacts.",
+  "Bioinformatics Assistant", "University of Queensland", "Brisbane, Australia", "August 2008 - February 2010", "The development and maintainence of a Laboratory Information Management System",
+  "Bioinformatics Assistant", "University of Queensland", "Brisbane, Australia", "August 2008 - February 2010", "Providing server and database administration for the lab.",
+  "Bioinformatics Assistant", "Commonwealth Scientific and Industrial Research Organisation", "Brisbane, Australia", "September 2006 - July 2008", "Generating a reference set of tRNAs for the Bovine Genome Sequencing and Analysis Consortium.",
+  "Bioinformatics Assistant", "Commonwealth Scientific and Industrial Research Organisation", "Brisbane, Australia", "September 2006 - July 2008", "Assisting with the design of the first ovine SNP chip for the International Sheep Genomics Consortium."
 ) %>% 
-  detailed_entries(Position, Year, Institution, Where)
+  detailed_entries(position, dates, institute, location, details)
 ```
 
-# Publications
+\newpage
 
-```{r pub}
+<!--\newpage-->
+
+# Honours and Awards
+
+```{r}
+tribble(
+  ~ award, ~ from, ~ year,
+  "Top 70 Bioinformatics Blogs and Websites for Bioinformaticians", "Feedspot", "Current",
+  "CSIRO Chairman's Medal", "CSIRO", "2010",
+  "CSIRO Partnership Excellence Award", "CSIRO", "2008"
+) %>%
+  brief_entries(award, year, from)
+```
+
+# Grants Awarded
+
+```{r}
+tribble(
+  ~ award, ~ from, ~ year,
+   "Western Australia Department of Health Near-Miss Merit Award (Chief Investigator)", "AUD 50,000", "2018",
+   "Dissecting the leukaemia microenvironment (Chief Investigator)", "AUD 43,395", "2017",
+   "Targeting four-stranded DNA conformations to modulate gene expression in breast cancer (Chief Investigator)", "AUD 47,669", "2016",
+   "Translating NextGen Sequencing for the Diagnosis of Developmental Anomalies and Rare Diseases (Associate Investigator)", "AUD 192,505", "2015",
+   "BrainTrain: Integrative neuroscience school on brain function and disease", "USD 4,400,000", "2009"
+) %>%
+  brief_entries(award, year, from)
+```
+
+# Presentations and Administrative Experiences
+
+```{r}
+tribble(
+  ~ what, ~ from, ~ year,
+  "Invited bioinformatics workshop presenter at BioC Asia", "Sydney", "2019",
+  "Session chair at BioC Asia", "Sydney", "2019",
+  "Invited speaker at Laboratory Medicine Congress and Exhibition (LMCE2019)", "South Korea", "2019",
+  "UWA Hacky Hour member", "Perth", "2018",
+  "Invited presenter at the Australian Bioinformatics and Computational Biology Society (ABACBS) meeting", "Perth", "2017",
+  "Invited MODHEP workshop presenter on analysing CAGE data", "Yokohama", "2015",
+  "Organiser of the RIKEN Yokohama Chat with Guest sessions", "Yokohama", "2013",
+  "Organiser of the RIKEN Yokohama Student Journal Club", "Yokohama", "2013",
+  "Organising committee for the BrainTrain conference", "Yokohama", "2013",
+  "Organiser of the Identifying Regulatory Elements in the Genome workshop in RIKEN", "Yokohama", "2013",
+  "Session chair for the Patients and Medicines Forum", "Yokohama", "2012",
+  "Invited presenter at the RIKEN OSC bioinformatics course", "Yokohama", "2012"
+) %>%
+  brief_entries(what, year, from)
+```
+
+# Workshop and Course Attendances
+
+```{r}
+tribble(
+  ~ what, ~ from, ~ year,
+  "BioC 2019: Where Software and Biology Connect", "New York", "2019",
+  "AGHA Workshop: reducing morbidity and mortality from genetic disease through screening", "Perth", "2016",
+  "Consumer and Community Involvement in Research workshop", "Perth", "2016",
+  "UQ winter school in mathematical and computational biology", "Brisbane", "2015",
+  "RIKEN/KI doctoral course: Employing Genome-wide Technologies for Functional Regulation in Development and Disease", "Stockholm", "2014",
+  "AMATA conference ECR workshop", "Gold Coast", "2013",
+  "Data analysis course from Johns Hopkins University", "Coursera", "2013",
+  "BrainTrain courses and workshops", "Europe", "2013",
+  "RIKEN/KI doctoral course: Epigenomics: Methods and Applications to Disease and Development", "Yokohama", "2013",
+  "SISSA summer school on dopaminergic neurons", "Trieste", "2012",
+  "RIKEN/KI doctoral course: Functional Regulation in Development and Disease", "Stockholm", "2012",
+  "UQ winter school in mathematical and computational biology", "Brisbane", "2011",
+  "RIKEN/EBI bioinformatics roadshow", "Yokohama", "2011"
+) %>%
+  brief_entries(what, year, from)
+```
+
+# Bioinformatic Skills
+
+A list of bioinformatic datasets and tools that I have experience analysing and employing.
+
+**Data Analysis:** DNA-seq, RNA-seq, CAGE-seq, sRNA-seq, ChIP-seq, ATAC-seq, scRNA-seq, HLA typing, CCLE, GTEx, TCGA, ENCODE.
+
+**Software Knowledge:** Docker, GATK4, Picard, WDL, Cromwell, Bpipe, SAMtools, [VB]CFtools, BEDTools, deepTools, GEMINI, VEP, SnpEff, SnpSift, R Shiny, Cell Ranger, Seurat, Monocle, HISAT2, StringTie, STAR, RSEM, HOMER, Conda, SPAdes, HISAT-genotype, Kourami, HLA-LA, IEDB related tools, phASER, WhatsHap, bam-readcount, RepeatMasker, BLAT, BLAST, UCSC Genome Browser.
+
+**R packages:** Tidyverse packages, tidymodels packages, core Bioconductor packages, biomaRt, data.table, Gviz, plotly, grid, gridExtra, UpSetR, pheatmap, dendextend, fgsea, edgeR, workflowr, parallel, vcfR.
+
+**Programming Languages:** Perl, R, Python, Bash scripting.
+
+<!--
+
+# Data Science Skills
+
+**Data Analysis:** data wrangling/tidying, machine learning and cross validation, cluster analysis, text mining, dimension reduction, data analytics
+
+**Software Knowledge:** RStudio and RStudio Server, AWS cloud computing, Docker containisation, SLURM, PBS, Git
+
+**Communication:** workshop and conference presentations (technical and non-technical), data analysis reports, scientific publications, data visualisations, technical blogging, social media
+
+**Programming Languages:** Perl, R, SQL, Bash
+
+**Business:** project management and planning, working with clients, networking
+
+-->
+
+# Editorial Activities
+
+Referee/Reviewer for: National Health and Medical Research Council, BMC Genomics, PeerJ, and Scientific Reports.
+
+# Referees
+
+**Brian Dalrymple** Honorary Research Fellow, Institute of Agriculture, The University of Western Australia, Australia, brian.dalrymple@uwa.edu.au
+
+**Piero Carninci** Principal Investigator, RIKEN Yokohama Campus, 1-7-22 Suehiro-cho, Tsurumi-ku, Yokohama, Kanagawa 230-0045, Japan, carninci@riken.jp
+
+# Peer Reviewed Publications
+
+```{r pub, warning=FALSE, message=FALSE}
 id <- '7uxzL2QAAAAJ'
 
 scholar::get_publications(id) %>%
+  rownames_to_column(var = "key") %>%
   mutate(author = gsub(pattern = "’", replacement = "'", x = author)) %>%
-  filter(cites > 0) %>%
+  filter(!grepl("^High-through", title)) %>%
+  filter(!grepl("^International Sheep Genomics", title)) %>%
+  filter(!grepl("Corrigendum", title)) %>%
   arrange(desc(year)) %>%
   distinct(title, .keep_all = TRUE) %>%
   transmute(bibtype = "Article",
@@ -62,7 +183,7 @@ scholar::get_publications(id) %>%
             title = as.character(title),
             journaltitle = as.character(journal),
             year,
-            key = row_number()) %>% 
+            key = key) %>% 
   RefManageR::as.BibEntry() %>% 
   RefManageR::WriteBib("tang.bib")
 

@@ -91,7 +91,7 @@ tribble(
   ~ what, ~ from, ~ year,
   "Invited bioinformatics workshop presenter at BioC Asia", "Sydney", "2019",
   "Session chair at BioC Asia", "Sydney", "2019",
-  "Invited speaker at Laboratory Medicine Congress and Exhibition (LMCE2019)", "South Korea", "2019",
+  "Invited speaker at Laboratory Medicine Congress and Exhibition (LMCE2019)", "Busan", "2019",
   "UWA Hacky Hour member", "Perth", "2018",
   "Invited presenter at the Australian Bioinformatics and Computational Biology Society (ABACBS) meeting", "Perth", "2017",
   "Invited MODHEP workshop presenter on analysing CAGE data", "Yokohama", "2015",
